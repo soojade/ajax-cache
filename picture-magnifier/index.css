@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.magnifier-box {
+  position: relative;
+  width: 360px;
+  height: 460px;
+  border: 1px solid #ccc;
+  margin: 100px auto;
+  box-shadow: 1px 1px 3px 3px #aaa;
+}
+/*图片显示区域*/
+.magnifier-pic,
+.magnifier-pic img,
+.magnifier-show {
+  width: 360px;
+  height: 400px;
+}
+
+/*下方可选图片列表*/
+.magnifier-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  border: 3px dashed rgb(188, 100, 240);
+}
+
+.magnifier-item li,
+.magnifier-item li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/*选中图片效果*/
+.magnifier-selected {
+  border: 1px solid red;
+  transform: scale(1.1);
+}
+
+/*鼠标选择区域*/
+.magnifier-area {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(26, 43, 32, 0.3);
+  cursor: move;
+}
+
+/*放大区域*/
+.magnifier-show {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 360px;
+  background: url(img/1.jpg) no-repeat;
+  background-size: 200%;
+}

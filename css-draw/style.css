@@ -1,0 +1,67 @@
+a {
+  text-decoration: none;
+  margin: 100px;
+}
+/* .close {
+  font-size: 3em;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  background: rgb(240, 208, 120);
+  border-radius: 50%;
+  transition: all 1s linear;
+} */
+.close:hover {
+  transform: rotate(180deg);
+  background: rgb(69, 219, 56);
+}
+.close {
+  font-size: 0px;
+  display: inline-block;
+  background: rgb(240, 208, 120);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  transition: all 1s linear;
+}
+.close::before,
+.close::after {
+  content: "";
+  width: 50px;
+  height: 5px;
+  background: rgb(233, 233, 233);
+  display: block;
+}
+.close::before {
+  transform: translateY(23px) rotate(45deg);
+}
+.close::after {
+  transform: translateY(18px) rotate(-45deg);
+}
+
+/*绘制菜单图标*/
+.menu {
+  display: inline-block;
+  text-indent: -999em;
+  font-size: 20px;
+  width: 2em;
+  height: 2.3em;
+  background: #333;
+  border-radius: 0.3em;
+  position: relative;
+}
+.menu::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  left: 0.5em;
+  top: 0.2em;
+  box-shadow: 0 0.5em 0 0.1em #fff, 0 1em 0 0.1em #fff, 0 1.5em 0 0.1em #fff;
+}
+.menu:hover {
+  background: rgb(23, 238, 148);
+}

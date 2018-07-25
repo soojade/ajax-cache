@@ -1,3 +1,4 @@
+/*关闭按钮*/
 a {
   text-decoration: none;
   margin: 100px;
@@ -64,4 +65,77 @@ a {
 }
 .menu:hover {
   background: rgb(23, 238, 148);
+}
+
+/*会话框*/
+.message {
+  position: relative;
+  background: rgb(127, 143, 177);
+  border-radius: 5px;
+  padding: 1em 1.2em;
+  width: 250px;
+  box-shadow: 2px 5px 1px rgba(75, 73, 109, 0.364);
+  color: #fff;
+}
+
+.message::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: -40px;
+  width: 0;
+  height: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(127, 143, 177);
+}
+
+/*播放按钮*/
+.play,
+.fast,
+.next {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 50px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 3px rgba(48, 107, 73, 0.3);
+  font-size: 0;
+  transition: all 0.5s ease-in-out;
+}
+.play:hover,
+.fast:hover,
+.next:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+.play::after,
+.fast::before,
+.fast::after,
+.next::before,
+.next::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(191, 243, 85);
+}
+.play::after {
+  left: 22px;
+}
+.fast::after {
+  left: 26px;
+}
+
+.next::after {
+  border-color: transparent transparent transparent #fff;
+}
+.next::before {
+  left: 22px;
 }

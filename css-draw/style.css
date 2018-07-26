@@ -139,3 +139,12 @@ a {
 .next::before {
   left: 22px;
 }
+
+/*文字渐变*/
+button {
+  background: linear-gradient(to right bottom, red, green, blue, yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+}

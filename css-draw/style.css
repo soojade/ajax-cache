@@ -1,3 +1,44 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/*背景图案*/
+body {
+  background: repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    );
+  background-size: 120px 120px;
+}
+
 /*关闭按钮*/
 a {
   text-decoration: none;
@@ -70,12 +111,12 @@ a {
 /*会话框*/
 .message {
   position: relative;
-  background: rgb(127, 143, 177);
   border-radius: 5px;
   padding: 1em 1.2em;
   width: 250px;
   box-shadow: 2px 5px 1px rgba(75, 73, 109, 0.364);
   color: #fff;
+  background: rgb(127, 143, 177);
 }
 
 .message::after {
@@ -89,6 +130,7 @@ a {
   border-style: solid;
   border-color: transparent transparent transparent rgb(127, 143, 177);
 }
+
 
 /*播放按钮*/
 .play,
@@ -147,4 +189,17 @@ button {
   background-clip: text;
   color: transparent;
   font-size: 50px;
+}
+
+/*锯齿彩旗效果*/
+.flags{
+  font-size: 30px;
+  text-align: center;
+  line-height: 100px;
+  background: red;
+  background-image: linear-gradient(45deg,#fff 25%,transparent 25%),
+    linear-gradient(-45deg,#fff 25%,transparent 25%);
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
 }

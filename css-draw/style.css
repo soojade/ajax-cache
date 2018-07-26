@@ -44,6 +44,16 @@ a {
   text-decoration: none;
   margin: 100px;
 }
+/*书签*/
+.bookmark{
+  display: inline-block;
+  text-indent: -999em;
+  width: 0;
+  height: 0;
+  border-width: 20px 15px;
+  border-color: red red transparent red;
+  border-style: solid;
+}
 /* .close {
   font-size: 3em;
   padding: 20px;
@@ -203,3 +213,4 @@ button {
   background-repeat: repeat-x;
   background-position: 0 100%;
 }
+

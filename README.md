@@ -7,3 +7,4 @@
 - [使用 css 制作加载动画](https://soojade.github.io/web-practice/loading-animation)
 - [使用 css 绘制图标](https://soojade.github.io/web-practice/css-draw)
 - [地图热点](https://soojade.github.io/web-practice/hot-region)
+- [小熊快跑](https://soojade.github.io/web-practice/bear-run)

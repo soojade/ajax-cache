@@ -193,11 +193,7 @@ a {
 }
 
 /*文字渐变*/
-<<<<<<< HEAD
-button {
-=======
 .gradBtn {
->>>>>>> master
   background: linear-gradient(to right bottom, red, green, blue, yellow);
   -webkit-background-clip: text;
   background-clip: text;
@@ -217,8 +213,6 @@ button {
   background-repeat: repeat-x;
   background-position: 0 100%;
 }
-<<<<<<< HEAD
-=======
 
 
 /* dropdown 箭头 */
@@ -244,4 +238,3 @@ button {
 .dropdown:hover::after{
     transform:translateY(-50%) rotate(135deg);
 }
->>>>>>> master

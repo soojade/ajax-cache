@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>热点地图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        .map {
+            background-color: rgb(30, 30, 30);
+        }
+
+        .map,
+        .map img {
+            position: relative;
+            width: 700px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .shandong,
+        .beijing {
+            position: absolute;
+            top: 260px;
+            left: 550px;
+        }
+
+        .beijing {
+            top: 205px;
+            left: 535px;
+        }
+
+        .dot,
+        .pulse {
+            position: absolute;
+            top: 12px;
+            left: -8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dot {
+            background-color: red;
+        }
+
+        .pulse {
+            /* border: 1px solid rgba(4, 178, 246, 0.698); */
+            box-shadow: 0 0 12px rgba(4, 177, 246, 0.534) inset;
+            animation: pulse 1.2s linear infinite;
+        }
+
+        .beijing .pulse {
+            border: 1px solid rgba(4, 246, 153, 0.698);
+            box-shadow: 0 0 12px rgba(4, 246, 77, 0.603) inset;
+            animation: pulse 1.5s ease-out infinite;
+        }
+
+        .shandong .pulse:nth-child(3) {
+            animation-delay: .3s;
+        }
+
+        .pulse:nth-child(4) {
+            animation-delay: 1s;
+        }
+
+        .pulse:nth-child(5) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes pulse {
+            0% {
+                width: 10px;
+                height: 10px;
+            }
+
+            50% {
+                width: 30px;
+                height: 30px;
+                opacity: .5;
+            }
+
+            70% {
+                width: 50px;
+                height: 50px;
+                opacity: .7;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <img src="./img/map.png" alt="map">
+        <div class="hotregion shandong">
+            山东
+            <div class="dot"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+        </div>
+        <div class="hotregion beijing">
+            北京
+            <div class="dot"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+            <div class="pulse"></div>
+        </div>
+    </div>
+</body>
+</html>

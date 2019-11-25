@@ -193,7 +193,11 @@ a {
 }
 
 /*文字渐变*/
+<<<<<<< HEAD
 button {
+=======
+.gradBtn {
+>>>>>>> master
   background: linear-gradient(to right bottom, red, green, blue, yellow);
   -webkit-background-clip: text;
   background-clip: text;
@@ -213,3 +217,31 @@ button {
   background-repeat: repeat-x;
   background-position: 0 100%;
 }
+<<<<<<< HEAD
+=======
+
+
+/* dropdown 箭头 */
+.dropdown{
+  position: relative;
+  line-height: 50px;
+  padding: 5px 20px;
+  background-color: rgba(15, 149, 238, 0.692);
+  font-size: 18px;
+}
+.dropdown::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  width: 7px;
+  height: 7px;
+  border: 2px solid red;
+  border-color:red red transparent transparent;
+  transform:translateY(-50%) rotate(45deg);
+}
+.dropdown:hover::after{
+    transform:translateY(-50%) rotate(135deg);
+}
+>>>>>>> master

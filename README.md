@@ -9,3 +9,4 @@
 - [地图热点](https://soojade.github.io/web-practice/hot-region)
 - [小熊快跑](https://soojade.github.io/web-practice/bear-run)
 - [反转盒子](https://soojade.github.io/web-practice/turn-box)
+- [3d导航栏](https://soojade.github.io/web-practice/3d-nav)

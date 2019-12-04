@@ -225,6 +225,10 @@
         let arr_l = document.querySelector('.arrow-l')
         let arr_r = document.querySelector('.arrow-r')
         let ol = document.createElement('ol')
+
+        let t = 3000 // 自动播放时间
+        let flag = true // 节流阀开关
+
         // 声明一个对象，利用Object.defineProperty监听id的变化从而显示相应的图片
         let obj = {}
         id = 0
@@ -242,7 +246,7 @@
                 } else {
                     id = val
                 }
-                move(screen, -id * slideshow.offsetWidth)
+                move(screen, -id * slideshow.offsetWidth, () => flag = true)
 
                 for (let i = 0; i < n; i++) {
                     ol.children[i].className = ''
@@ -275,8 +279,34 @@
         screen.appendChild(first)
 
         // 左右箭头
-        arr_l.addEventListener('click', () => obj.id--)
-        arr_r.addEventListener('click', () => obj.id++)
+        arr_l.addEventListener('click', () => {
+            // 添加节流阀防止过度点击
+            if (flag) {
+                flag = false
+                obj.id--
+            }
+        })
+        arr_r.addEventListener('click', () => {
+            if (flag) {
+                flag = false
+                obj.id++
+            }
+        })
+
+        // 自动播放
+        let timer = setInterval(() => {
+            arr_r.click() // 手动调用点击事件
+        }, t);
+
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(timer)
+            timer = null
+        })
+        slideshow.addEventListener('mouseleave', () => {
+            timer = setInterval(() => {
+                arr_r.click()
+            }, t);
+        })
 
         //滚动动画函数
         function move(obj, target, cbk) {
@@ -286,7 +316,7 @@
                     step = step > 0 ? Math.ceil(step) : Math.floor(step)
                     obj.style.left = obj.offsetLeft + step + 'px'
                     if (obj.offsetLeft == target) {
-                        cbk && ckb()
+                        cbk && cbk()
                         clearInterval(obj.timer)
                         obj.timer = undefined
                     }

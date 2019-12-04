@@ -263,10 +263,8 @@
         for (let i = 0; i < n; i++) {
             let li = document.createElement('li')
             li.addEventListener('click', function () {
-                for (let i = 0; i < n; i++) {
-                    ol.children[i].className = ''
-                }
-                this.className = 'current'
+                ol.querySelector('.current').classList.remove('current')
+                this.classList.add('current')
                 obj.id = i
             })
             ol.appendChild(li)

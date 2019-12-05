@@ -248,13 +248,11 @@
                 }
                 move(screen, -id * slideshow.offsetWidth, () => flag = true)
 
-                for (let i = 0; i < n; i++) {
-                    ol.children[i].className = ''
-                }
+                ol.querySelector('.current').classList.remove('current')
                 if (id != n) {
-                    ol.children[id].className = 'current'
+                    ol.children[id].classList.add('current')
                 } else {
-                    ol.children[0].className = 'current'
+                    ol.children[0].classList.add('current')
                 }
             }
         })

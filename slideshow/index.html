@@ -231,26 +231,26 @@
 
         // 声明一个对象，利用Object.defineProperty监听id的变化从而显示相应的图片
         let obj = {}
-        id = 0
+        _id = 0
         Object.defineProperty(obj, 'id', {
             get() {
-                return id
+                return _id
             },
             set(val) {
                 if (val > n) {
                     screen.style.left = 0
-                    id = 1
+                    _id = 1
                 } else if (val < 0) {
                     screen.style.left = -slideshow.offsetWidth * n + 'px'
-                    id = n - 1
+                    _id = n - 1
                 } else {
-                    id = val
+                    _id = val
                 }
-                move(screen, -id * slideshow.offsetWidth, () => flag = true)
+                move(screen, -_id * slideshow.offsetWidth, () => flag = true)
 
                 ol.querySelector('.current').classList.remove('current')
-                if (id != n) {
-                    ol.children[id].classList.add('current')
+                if (_id != n) {
+                    ol.children[_id].classList.add('current')
                 } else {
                     ol.children[0].classList.add('current')
                 }

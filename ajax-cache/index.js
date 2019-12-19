@@ -1,4 +1,4 @@
-const URL = "https://route.showapi.com/181-1";
+const URL = "https://route.showapi.com/181-1"; //调用接口已失效
 let page = 3;
 let content = document.getElementsByClassName("news")[0]; // 性能：get > query > $，其中get支持动态选择器
 let ul = document.getElementsByClassName("pages")[0];
@@ -24,7 +24,7 @@ ul.addEventListener("click", e => {
 function cacheData() {
   let cache = {}; // 存放缓存，在闭包中保存数据
   return {
-    get: function(page) {
+    get: function (page) {
       if (page in cache) {
         showData(cache[page]);
         console.log("使用缓存数据页：" + page);
@@ -32,7 +32,7 @@ function cacheData() {
         getJson();
       }
     },
-    set: function(page, dataArr) {
+    set: function (page, dataArr) {
       cache[page] = dataArr;
     }
   };
@@ -77,7 +77,7 @@ function getJson() {
 function showData(arr) {
   let template = "";
   // 注意不要省略最后的分号
-  for (let i = 0, item; (item = arr[i++]); ) {
+  for (let i = 0, item; (item = arr[i++]);) {
     template += `
       <li>
         <img src="${item.picUrl}" alt="">
